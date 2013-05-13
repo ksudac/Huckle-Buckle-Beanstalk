@@ -20,68 +20,7 @@
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
-
-var theNumber = null;
-var numGuess = 0;
-var numberSelected = false;
-var previousGuess = null;
- 
-function numberInitalized(){
-    if (!numberSelected){
-        init();
-    }
-    else{
-        numGuess++;
-        compareUserGuess(theNumber, numGuess);
-    }
-}
- 
- 
-function init(){
-    theNumber = Math.floor((Math.random()*100)+1);
-    numGuess = 1;
-    numberSelected = true;
-    compareUserGuess(theNumber, numGuess);
-}
- 
-    
-function compareUserGuess(theNumber, numGuess){
-    
-    var playerGuess = document.getElementById('userGuess').value;
-    var theDifference = 0;
-    var previousDifference;
-    var temperature = null;
-
-    
-    theDifference = Math.abs(playerGuess-theNumber);
-    previousDifference = Math.abs(previousGuess - theNumber);
-
-    if(theDifference < previousDifference){
-       temperature = 'Hotter';
-    }
-    else{
-        temperature = 'Colder';
-    }
-    
-    if(parseInt(playerGuess) === parseInt(theNumber)){
-        alert('You got it in ' + numGuess + ' guesses!' + ' The Number: ' + theNumber);
-    }
-    else if (playerGuess > theNumber){
-        alert('Your getting ' + temperature + '! ' + playerGuess + ' is too high!' + ' Number of Guesses: '+ numGuess + ' The Number: ' + theNumber);
-    }
-    else {
-        alert('Your getting ' + temperature + '! ' + playerGuess + ' is too low!'  + ' Number of Guesses: '+ numGuess + ' The Number: ' + theNumber);
-    }  
-    
-    previousGuess = playerGuess;
-}
-    
-
-
-</script>
-
-
+<script type="text/javascript" src="js/scripts.js"></script>
 
 
 </body>
